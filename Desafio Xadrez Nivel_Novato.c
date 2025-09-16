@@ -4,16 +4,16 @@ int main() {
     // ==========================
     // Definição das variáveis
     // ==========================
-    int casasTorre = 5;   // Quantidade de casas para mover a Torre
-    int casasBispo = 5;   // Quantidade de casas para mover o Bispo
-    int casasRainha = 8;  // Quantidade de casas para mover a Rainha
-    int i;                // Contador para estruturas de repetição
+    int casasTorre = 5;    // Movimentos da Torre
+    int casasBispo = 5;    // Movimentos do Bispo
+    int casasRainha = 8;   // Movimentos da Rainha
+    int passosVerticaisCavalo = 2; // Duas casas para baixo
+    int passosHorizontaisCavalo = 1; // Uma casa para a esquerda
+    int i, j;              // Contadores para loops
 
     // ==========================
     // Movimento da Torre (FOR)
     // ==========================
-    // A Torre move-se em linha reta horizontalmente ou verticalmente.
-    // Neste caso, ela irá se mover cinco casas para a direita.
     printf("=== Movimento da Torre ===\n");
     for (i = 1; i <= casasTorre; i++) {
         printf("Direita (casa %d)\n", i);
@@ -22,8 +22,6 @@ int main() {
     // ==========================
     // Movimento do Bispo (WHILE)
     // ==========================
-    // O Bispo move-se na diagonal. Aqui, ele irá se mover cinco casas
-    // na diagonal para cima e à direita.
     printf("\n=== Movimento do Bispo ===\n");
     i = 1;
     while (i <= casasBispo) {
@@ -34,14 +32,32 @@ int main() {
     // ==========================
     // Movimento da Rainha (DO-WHILE)
     // ==========================
-    // A Rainha pode mover-se em todas as direções. Aqui, ela irá se mover
-    // oito casas para a esquerda.
     printf("\n=== Movimento da Rainha ===\n");
     i = 1;
     do {
         printf("Esquerda (casa %d)\n", i);
         i++;
     } while (i <= casasRainha);
+
+    // ==========================
+    // Movimento do Cavalo (FOR + WHILE ANINHADOS)
+    // ==========================
+    // O Cavalo se move duas casas para baixo e uma para a esquerda.
+    // O loop externo (FOR) controla o movimento para baixo.
+    // O loop interno (WHILE) controla o movimento para a esquerda.
+    printf("\n=== Movimento do Cavalo ===\n");
+
+    // Loop externo: duas casas para baixo
+    for (i = 1; i <= passosVerticaisCavalo; i++) {
+        printf("Baixo (passo %d)\n", i);
+    }
+
+    // Loop interno: uma casa para a esquerda (usando while)
+    j = 1;
+    while (j <= passosHorizontaisCavalo) {
+        printf("Esquerda (passo %d)\n", j);
+        j++;
+    }
 
     return 0;
 }
