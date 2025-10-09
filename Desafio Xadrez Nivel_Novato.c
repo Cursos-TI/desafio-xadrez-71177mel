@@ -62,7 +62,7 @@ int main() {
 
     // ==========================
     // Movimento do Cavalo (Loops Aninhados Complexos)
-    // ==========================
+    // ============================
     printf("\n=== Movimento do Cavalo ===\n");
     // O Cavalo move-se duas casas para cima e uma para a direita.
     // Usaremos loops aninhados com múltiplas variáveis e condições,
